@@ -19,6 +19,12 @@
             width: 100%;
             background-color:whitesmoke;
         }
+        .btn{
+            background-color: hotpink;
+        }
+        .mb-3{
+            color: purple
+        }
     </style>
 </head>
 <body>
@@ -26,7 +32,7 @@
     <div class="container d-flex justify-content-center align-items-center vh-100">
         
         <div class="card p-4 login-card">
-            <h3 class="text-center mb-3">Sistema de Acesso</h3>
+            <h3 class="text-center mb-3" >Sistema de Acesso</h3>
             <p class="text-center text-muted">Entre com seu usuário e senha</p>
 
         
@@ -43,7 +49,7 @@
                 <input type="password" id="senha" class="form-control" placeholder="Digite sua senha">
             </div>
 
-            <button class="btn btn-primary w-100" onclick="fazerLogin()">Entrar</button>
+            <button class="btn btn-danger w-100" onclick="fazerLogin()">Entrar</button>
         </div>
 
     </div>
@@ -56,15 +62,15 @@
         function fazerLogin() {
             const usuario = document.getElementById("user").value.trim();
             const senha = document.getElementById("senha").value.trim();
-            const alertBox = document.getElementById("alertStatus");
+            const alerta = document.getElementById("alertStatus");
 
        
-            alertBox.innerHTML = "";
+            alerta.innerHTML = "";
 
             if (usuario === "" || senha === "") {
-                alertBox.innerHTML = `
+                alerta.innerHTML = `
                     <div class="alert alert-warning" role="alert">
-                        Preencha todos os campos!
+                        Preencha com o usuário e a senha!
                     </div>
                 `;
                 return;
@@ -72,13 +78,13 @@
 
             
             if (usuario === "mariazinha" && senha === "123456789") {
-                alertBox.innerHTML = `
+                alerta.innerHTML = `
                     <div class="alert alert-success" role="alert">
                         Login realizado com sucesso!
                     </div>
                 `;
             } else {
-                alertBox.innerHTML = `
+                alerta.innerHTML = `
                     <div class="alert alert-danger" role="alert">
                         Usuário ou senha incorretos!
                     </div>
